@@ -135,7 +135,7 @@ const sectionObserverHandler = (entries: any) => {
             <AboutView id="about" class="section" />
             <ExperienceView id="experiences" class="section" />
             <ProjectView id="projects" class="section" />
-            <!-- <ContactView id="contact" class="section" /> -->
+            <ContactView id="contact" class="section" />
           </section>
         </div>
       </div>
