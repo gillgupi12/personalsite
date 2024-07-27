@@ -150,6 +150,10 @@ const sectionObserverHandler = (entries: any) => {
                 /></a>
               </div>
             </section>
+            <div class="text-left py-8 text-slate-400">
+      Inspired by Brittany Chiang.<br />
+      Built using vue3 and iconify for icons.
+    </div>
           </header>
         </div>
         <div>
@@ -161,9 +165,6 @@ const sectionObserverHandler = (entries: any) => {
         </div>
       </div>
     </div>
-    <div class="text-center py-8 text-slate-400 p-4">
-      Inspired by Brittany Chiang.<br />
-      Built using vue3 and iconify for icons.
-    </div>
+ 
   </div>
 </template>
