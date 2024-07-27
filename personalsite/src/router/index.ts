@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import AboutView from '../views/AboutView.vue'
 import ExperienceView from '../views/ExperienceView.vue'
-import ContactView from '../views/ContactView.vue'
 import ProjectView from '../views/ProjectView.vue'
+import EducationView from '@/views/EducationView.vue'
 
 const router = createRouter({
   scrollBehavior(to, from, savedPosition){
@@ -27,13 +27,13 @@ const router = createRouter({
     },
     {
       path: '/',
-      name: 'contact',
-      component: ContactView
+      name: 'projects',
+      component: ProjectView
     },
     {
       path: '/',
-      name: 'projects',
-      component: ProjectView
+      name: 'educations',
+      component: EducationView
     },
     
   ]
