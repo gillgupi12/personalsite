@@ -52,7 +52,6 @@ const setHash = (href: string) => {
 }
 const router = useRouter()
 onMounted(() => {
-
   router.push({ path: '/', hash: routeLinks.value[0].href })
   currentHash.value = routeLinks.value[0].href
   observeSection()
@@ -132,7 +131,7 @@ const sectionObserverHandler = (entries: any) => {
                 </RouterLink>
               </ul>
             </nav>
-            <!-- <section class="">
+            <section>
               <div class="flex flex-row gap-3 text-3xl hover:cursor-pointer">
                 <a href="http://www.github.com/gillgupi12">
                   <GithubIcon class="text-slate-500 hover:text-slate-50" />
@@ -150,7 +149,7 @@ const sectionObserverHandler = (entries: any) => {
                   <TwitterIcon class="text-slate-500 hover:text-slate-50"
                 /></a>
               </div>
-            </section> -->
+            </section>
           </header>
         </div>
         <div>
@@ -163,7 +162,7 @@ const sectionObserverHandler = (entries: any) => {
       </div>
     </div>
     <div class="text-center py-8 text-slate-400 p-4">
-      Inspired by Brittany Chiang.<br>
+      Inspired by Brittany Chiang.<br />
       Built using vue3 and iconify for icons.
     </div>
   </div>
