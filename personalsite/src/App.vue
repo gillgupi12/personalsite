@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import AboutView from './views/AboutView.vue'
-import ExperienceView from './views/ExperienceView.vue'
-import ProjectView from './views/ProjectView.vue'
-import ContactView from './views/ContactView.vue'
 import { onMounted, ref } from 'vue'
 import { RouterLink, useRouter } from 'vue-router'
 import GithubIcon from './assets/githubIcon.vue'
-import linkedinIcon from './assets/linkedinIcon.vue'
 import InstagramIcon from './assets/instragramIcon.vue'
+import linkedinIcon from './assets/linkedinIcon.vue'
 import TwitterIcon from './assets/twitterIcon.vue'
+import AboutView from './views/AboutView.vue'
+import EducationView from './views/EducationView.vue'
+import ExperienceView from './views/ExperienceView.vue'
+import ProjectView from './views/ProjectView.vue'
 
 const handleMouseMove = (event: any) => {
   updateLightPosition(event.pageX, event.pageY)
@@ -43,6 +43,10 @@ const routeLinks = ref([
   {
     name: 'projects',
     href: '#projects'
+  },
+  {
+    name: 'educations',
+    href: '#educations'
   }
 ])
 
@@ -68,7 +72,7 @@ const observeSection = () => {
 
   const options = {
     rootMargin: '0px 0px',
-    threshold: 0.9
+    threshold: 0.5
   }
   sectionObserver.value = new IntersectionObserver(sectionObserverHandler, options)
   const sections = document.querySelectorAll('.section')
@@ -151,9 +155,9 @@ const sectionObserverHandler = (entries: any) => {
               </div>
             </section>
             <div class="text-left py-8 text-slate-400">
-      Inspired by Brittany Chiang.<br />
-      Built using vue3 and iconify for icons.
-    </div>
+              Inspired by Brittany Chiang.<br />
+              Built using vue3 and iconify for icons.
+            </div>
           </header>
         </div>
         <div>
@@ -161,10 +165,10 @@ const sectionObserverHandler = (entries: any) => {
             <AboutView id="about" class="section" />
             <ExperienceView id="experiences" class="section" />
             <ProjectView id="projects" class="section" />
+            <EducationView id="educations" class="section" />
           </section>
         </div>
       </div>
     </div>
- 
   </div>
 </template>
