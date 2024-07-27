@@ -3,7 +3,9 @@
 @tailwind utilities;
 
 
-
-body{
-    font-family: 'Inter';
+html, body {
+  height:100%;
+  font-family: 'Inter';
+  width: 100%;
+  overscroll-behavior-y: none;
 }

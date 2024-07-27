@@ -5,6 +5,10 @@ import ProjectView from './views/ProjectView.vue'
 import ContactView from './views/ContactView.vue'
 import { onMounted, ref } from 'vue'
 import { RouterLink, useRouter } from 'vue-router'
+import GithubIcon from './assets/githubIcon.vue'
+import linkedinIcon from './assets/linkedinIcon.vue'
+import InstagramIcon from './assets/instragramIcon.vue'
+import TwitterIcon from './assets/twitterIcon.vue'
 
 const handleMouseMove = (event: any) => {
   updateLightPosition(event.pageX, event.pageY)
@@ -48,8 +52,9 @@ const setHash = (href: string) => {
 }
 const router = useRouter()
 onMounted(() => {
-  currentHash.value = routeLinks.value[0].href
+
   router.push({ path: '/', hash: routeLinks.value[0].href })
+  currentHash.value = routeLinks.value[0].href
   observeSection()
 })
 
@@ -57,14 +62,14 @@ const sectionObserver = ref()
 
 const observeSection = () => {
   try {
-    sectionObserver.value.disconnect()
+    sectionObserver.value?.disconnect()
   } catch (error) {
     console.log(error)
   }
 
   const options = {
     rootMargin: '0px 0px',
-    threshold: .9
+    threshold: 0.9
   }
   sectionObserver.value = new IntersectionObserver(sectionObserverHandler, options)
   const sections = document.querySelectorAll('.section')
@@ -82,7 +87,6 @@ const sectionObserverHandler = (entries: any) => {
     }
   }
 }
-
 </script>
 
 <template>
@@ -128,6 +132,25 @@ const sectionObserverHandler = (entries: any) => {
                 </RouterLink>
               </ul>
             </nav>
+            <!-- <section class="">
+              <div class="flex flex-row gap-3 text-3xl hover:cursor-pointer">
+                <a href="http://www.github.com/gillgupi12">
+                  <GithubIcon class="text-slate-500 hover:text-slate-50" />
+                </a>
+
+                <a href="https://www.linkedin.com/in/gupi-s-wan-b16431207/">
+                  <linkedinIcon class="text-slate-500 hover:text-slate-50" />
+                </a>
+
+                <a href="http://www.instagram.com/gill_gupi">
+                  <InstagramIcon class="text-slate-500 hover:text-slate-50"
+                /></a>
+
+                <a href="https://x.com/urbanosuave">
+                  <TwitterIcon class="text-slate-500 hover:text-slate-50"
+                /></a>
+              </div>
+            </section> -->
           </header>
         </div>
         <div>
@@ -135,10 +158,13 @@ const sectionObserverHandler = (entries: any) => {
             <AboutView id="about" class="section" />
             <ExperienceView id="experiences" class="section" />
             <ProjectView id="projects" class="section" />
-            <ContactView id="contact" class="section" />
           </section>
         </div>
       </div>
+    </div>
+    <div class="text-center py-8 text-slate-400 p-4">
+      Inspired by Brittany Chiang.<br>
+      Built using vue3 and iconify for icons.
     </div>
   </div>
 </template>
